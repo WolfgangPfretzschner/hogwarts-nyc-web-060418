@@ -3,6 +3,7 @@ import '../App.css';
 import Nav from './Nav'
 import hogs from '../porkers_data';
 import HogsContainer from './HogsContainer';
+import Filter from './Filter'
 
 // const addHogsImage = () => {
 //   return hogs.map(hog => {
@@ -34,6 +35,7 @@ class App extends Component {
     return (
       <div className="App">
           < Nav />
+          < Filter />
           < HogsContainer hogs={this.state.hogs}/>
 
       </div>
