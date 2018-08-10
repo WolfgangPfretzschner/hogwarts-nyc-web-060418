@@ -26,17 +26,26 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
+      hogs1: hogs,
       hogs: this.addHogsImage()
     }
-    }
+  }
 
+  sortByWeight = () => {
+    let weight = "weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water"
+    let sortArray = this.state.hogs1.sort((a,b) => a[weight] > b[weigh]t ? 1 : (b[weight]  > a[weight] ? -1 : 0))
+    this.setState({
+      hogs1: sortArray
+    })
+  }
+  
   render() {
     console.log(this.state)
     return (
       <div className="App">
           < Nav />
-          < Filter />
-          < HogsContainer hogs={this.state.hogs}/>
+          < Filter sortByWeight={this.sortByWeight} />
+          < HogsContainer hogs={this.state.hogs1}/>
 
       </div>
     )

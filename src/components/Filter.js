@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Filter = () => {
+const Filter = (props) => {
     return (
         <div>
-            "Filter"
+            <button onClick={props.sortByWeight} >
+                sort-Me
+            </button>
         </div>
     )
 
